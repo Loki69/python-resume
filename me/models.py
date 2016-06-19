@@ -1,6 +1,6 @@
 from django.db import models
+from datetime import datetime
 
-# Create your models here.
 
 class Skill(models.Model):
     class Meta:
@@ -16,10 +16,10 @@ class Persona(models.Model):
     years = models.DateTimeField()
     location = models.CharField(max_length=100)
     skills = models.ManyToManyField(Skill)
+    # article = models.ForeignKey(Article, default=False, on_delete=models.CASCADE )
 
     def __str__(self):
         return self.fio
-
 
 
 class Article(models.Model):
@@ -28,12 +28,18 @@ class Article(models.Model):
     title = models.CharField(max_length=100)
     article = models.TextField()
     shor_article = models.TextField()
+    publishe = models.DateTimeField(default=False, blank=True) 
 
     def __str__(self):
         return self.title
 
-# class Photo(models.Model):
-#     photo=models
+class AboutMe(Article):
+    class Meta:
+        db_table = "ABOUT"
+    persona = models.OneToOneField(Persona, default =False)
+
+    def __str__(self):
+        return self.title
 
 class Project(Article):
     class Meta:
@@ -44,4 +50,7 @@ class Project(Article):
     def __str__(self):
         return self.title
 
+
+# TO DO
 # class About(models.Model):
+# class Photo(models.Model):
