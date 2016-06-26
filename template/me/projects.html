@@ -1,0 +1,15 @@
+{% extends 'index.html' %} 
+
+
+{% block projects %}
+<ul class="style1">
+        {% for new in news %}
+        <li class="first">
+            <p class="date">Jan<b>05</b></p>
+            <h3>{{ new.title }}</h3>
+            <p><a href="#">{{ new.shor_article }}</a></p>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

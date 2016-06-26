@@ -1,5 +1,4 @@
 from django.db import models
-from datetime import datetime
 
 
 class Skill(models.Model):
@@ -13,7 +12,7 @@ class Persona(models.Model):
     class Meta:
         db_table = "PERSONA"
     fio = models.CharField(max_length=250)
-    years = models.DateTimeField()
+    years = models.DateField()
     location = models.CharField(max_length=100)
     skills = models.ManyToManyField(Skill)
     # article = models.ForeignKey(Article, default=False, on_delete=models.CASCADE )

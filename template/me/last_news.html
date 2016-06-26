@@ -1,18 +1,7 @@
-{% extends 'index.html' %} {% block news %}
-<div id="featured">
-    <div class="title">
-        <!--{% block aboutme %}{% endblock %}-->
-        <h2>RSS</h2>
-        <span class="byline">Sit </span>
-    </div>
-    <ul class="style1">
-        {% for ned in news %}
-        <li class="first">
-            <p class="date"><a href="#">Jan<b>05</b></a></p>
-            <h3>{{ ned.title }}</h3>
-            <p><a href="#">{{ ned.shor_article }}</a></p>
-        </li>
-        {% endfor %}
-    </ul>
-</div>
+{% extends 'index.html' %} 
+
+{% block news %}
+    {% block projects %}
+    {% include 'welcome.html' %}
+    {% endblock %}
 {% endblock %}

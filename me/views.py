@@ -3,12 +3,21 @@ from django.http.response import HttpResponse
 from django.template.loader import get_template
 from .models import Persona, Skill, Project
 
-def index(request):
-    return render_to_response('me/last_news.html',{'news':last_news()})
-
 def last_news(count=1):
     return Project.objects.all()
 
+def index(request):
+    return render_to_response('test/r1/base.html',{'news':last_news()})
+
+def projects(request):
+    return render_to_response('me/last_news.html',{'news':last_news()})
+
+def project(request,project_id):
+    try: 
+        project = Project.objects.get(id=project_id)
+    except ObjectDoesNotExist:
+        raise Http404
+    return render_to_response('me/last_news.html',{'project':project})
 
 def aboutMe(request):
     result = None
