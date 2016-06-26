@@ -1,0 +1,12 @@
+
+*.sqlite3
+env
+bin
+obj
+*.user
+web.config
+web.debug.config
+ptvs_virtualenv_proxy.py
+.gitignore
+resume.pyproj
+readme.mht

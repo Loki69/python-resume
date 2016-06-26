@@ -34,9 +34,7 @@ class Article(models.Model):
         return self.title
 
 class AboutMe(Article):
-    class Meta:
-        db_table = "ABOUT"
-    persona = models.OneToOneField(Persona, default =False)
+    aboutme_persona = models.OneToOneField(Persona, related_name='resume', default =False)
 
     def __str__(self):
         return self.title

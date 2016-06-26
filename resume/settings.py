@@ -44,8 +44,7 @@ ROOT_URLCONF = 'resume.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/root/dev/dj_project/resume/template',
-        '/root/dev/dj_project/resume/me/template',],
+        'DIRS': [ os.path.join(BASE_DIR, "template"),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -60,7 +59,7 @@ TEMPLATES = [
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    '/root/dev/dj_project/resume/static/',
+    '/static/',
 ]
 
 WSGI_APPLICATION = 'resume.wsgi.application'

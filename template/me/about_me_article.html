@@ -1,22 +1,16 @@
 {% extends 'index.html' %}
-{% block aboutme %}
+{% block aboutmeArticle %}
 <div id="welcome">
     <div class="title">
         <h2>FIO</h2>
         <span>{{persona.fio}}</span>
         <span>{{persona.years}}</span>
         <span>{{persona.location}}</span>
-        <span >
+        <span>
         {% for skill in persona.skills.all %}
             <p>{{skill}}</p>
         {% endfor %}
         </span>
     </div>
-    <p>Write somothing later</p>
-    <ul class="actions">
-        <li>
-            <a href="#" class="button"> </a>
-        </li>
-    </ul>
 </div>
 {% endblock %}
