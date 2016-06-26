@@ -7,7 +7,7 @@ def last_news(count=1):
     return Project.objects.all()
 
 def index(request):
-    return render_to_response('test/r1/base.html',{'news':last_news()})
+    return render_to_response('test/r1/base_core2.html',{'news':last_news()})
 
 def projects(request):
     return render_to_response('me/last_news.html',{'news':last_news()})

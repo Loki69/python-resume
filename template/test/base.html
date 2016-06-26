@@ -14,27 +14,19 @@
 
 <body>
 	<div id="page" class="container">
+		{% block head %}
 		<div id="header">
-			<div id="logo">
-				<img src="{% static 'images/p01(50%).jpg' %}" alt="" />
-				<h1><a href="#">Pavel Garanin</a></h1>
-			</div>
-			<div id="menu">
-				<ul>
-					<li class="current_page_item"><a href="#" accesskey="1" title="">Homepage</a></li>
-					<li><a href="#" accesskey="2" title="">My project</a></li>
-					<li><a href="#" accesskey="3" title="">About me</a></li>
-					<li><a href="#" accesskey="4" title="">Contact me</a></li>
-				</ul>
-			</div>
+			{% block logo %}{% endblock %}
+			{% block menu %}{% endblock %}
 		</div>
+		{% endblock %}
+
+		{% block main %}
 		<div id="main">
-			<div id="banner">
-				<img src="{% static 'images/p02.jpg' %}" alt="" class="image-full" />
-			</div>
-			{% block news %}
-            {% endblock %}
+			{% block banner %}{% endblock %}
+			{% block content %}{% endblock %}
 		</div>
+		{% endblock %}
 	</div>
 </body>
 
