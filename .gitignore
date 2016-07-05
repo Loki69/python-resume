@@ -10,3 +10,4 @@ ptvs_virtualenv_proxy.py
 .gitignore
 resume.pyproj
 readme.mht
+__pycache__
