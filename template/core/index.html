@@ -16,14 +16,14 @@
 	<div id="page" class="container">
 		{% block head %}
 		<div id="header">
-			{% block logo %}{% endblock %}
-			{% block menu %}{% endblock %}
+			{% include 'reuse_block/logo.html' %}
+			{% include 'reuse_block/menu.html' %}
 		</div>
 		{% endblock %}
 
 		{% block main %}
 		<div id="main">
-			{% block banner %}{% endblock %}
+			{% include 'reuse_block/banner.html' %}
 			{% block content %}{% endblock %}
 		</div>
 		{% endblock %}

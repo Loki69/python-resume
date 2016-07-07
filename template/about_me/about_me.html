@@ -1,14 +1,7 @@
-{% extends 'index.html' %} {% load static %}
-{% block menu %}
-<div id="menu">
-    <ul>
-        <li class="current_page_item"><a href="#" accesskey="1" title="">Homepage</a></li>
-        <li><a href="#" accesskey="2" title="">My project</a></li>
-        <li><a href="#" accesskey="3" title="">About me</a></li>
-        <li><a href="#" accesskey="4" title="">Contact me</a></li>
-    </ul>
-</div>
-{% endblock %} 
-{% block content %}
+{% extends "core/index.html" %}
+{% load static %}
 
+{% block content %}     
+    {% block welcome %} {% endblock %}
+    {% block featured %} {% endblock %}
 {% endblock %}

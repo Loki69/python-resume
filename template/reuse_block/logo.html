@@ -1,0 +1,12 @@
+{% load static %}
+{% block logo %}
+<div id="logo">
+    <img src={% if logos = None %}
+                {% static 'images/p01(50%).jpg' %}
+            {% else %}
+                "{{ logos }}"
+            {% endif %}
+             alt="">
+    <h1><a href="#">Garanin Pavel</a></h1>
+</div>
+{% endblock %}
