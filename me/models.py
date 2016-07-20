@@ -15,7 +15,7 @@ class Persona(models.Model):
     years = models.DateField()
     location = models.CharField(max_length=100)
     skills = models.ManyToManyField(Skill)
-    # article = models.ForeignKey(Article, default=False, on_delete=models.CASCADE )
+    # article = models.ForeignKey(Article)
 
     def __str__(self):
         return self.fio

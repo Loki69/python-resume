@@ -1,7 +1,18 @@
-{% extends "core/index.html" %}
-{% load static %}
+{% extends "core/index.html" %} {% load static %} {% block content %} {% block about%}
+<div id="welcome">
+    <div class="title">
+        <h2>Resume</h2>
+    </div>
+    <div>
+        <span class="byline">FIO:{{persona.fio}}</span><br/>
+        <span class="byline">Age:{{persona.years}}</span><br/>
+        <span class="byline">Location:{{persona.location}}</span><br/>
 
-{% block content %}
-    {% block about%}{% endblock %}     
-    {% include 'reuse_block/news.html' %}
-{% endblock %}
+        <span class="byline">
+            Skils:{% for skill in persona.skills.all%}
+            {{skill.skill}}
+            {% endfor %}
+            </span><br/>
+    </div>
+</div>
+{% endblock %} {% endblock %}
