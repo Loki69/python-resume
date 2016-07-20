@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Persona, Skill, Project, Article, AboutMe
+from .models import Persona, Skill, Project, Article
 
 # Register your models here.
 
@@ -9,12 +9,9 @@ class SkillsPersonaInline(admin.TabularInline):
 class SkillsProjectInline(admin.TabularInline):
     model = Project.skills.through
 
-# class AboutPersonaInline(admin.TabularInline):
-#     model = Project.about.through
-
 class AboutPersonaInline(admin.StackedInline):
-    model = AboutMe
-    exclude = ('shor_article',)
+    model = Article.owner.through
+    # exclude = ('shor_article',)
     extra = 1
 
 class PersonaAdmin(admin.ModelAdmin):

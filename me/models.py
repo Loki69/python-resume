@@ -15,7 +15,6 @@ class Persona(models.Model):
     years = models.DateField()
     location = models.CharField(max_length=100)
     skills = models.ManyToManyField(Skill)
-    # article = models.ForeignKey(Article)
 
     def __str__(self):
         return self.fio
@@ -27,13 +26,8 @@ class Article(models.Model):
     title = models.CharField(max_length=100)
     article = models.TextField()
     shor_article = models.TextField()
-    publishe = models.DateTimeField(default=False, blank=True) 
-
-    def __str__(self):
-        return self.title
-
-class AboutMe(Article):
-    aboutme_persona = models.OneToOneField(Persona, related_name='resume', default =False)
+    publishe = models.DateTimeField(default=False, blank=True)
+    owner = models.ManyToManyField(Persona)
 
     def __str__(self):
         return self.title
