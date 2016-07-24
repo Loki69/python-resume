@@ -9,7 +9,7 @@ class SkillsPersonaInline(admin.TabularInline):
 class SkillsProjectInline(admin.TabularInline):
     model = Project.skills.through
 
-class AboutPersonaInline(admin.StackedInline):
+class AboutPersonaInline(admin.TabularInline):
     model = Article.owner.through
     # exclude = ('shor_article',)
     extra = 1
@@ -32,5 +32,6 @@ class ProjectAdmin(admin.ModelAdmin):
 
 admin.site.register(Persona,PersonaAdmin)
 admin.site.register(Project,ProjectAdmin)
+admin.site.register(Article)
 admin.site.register(Skill)
 

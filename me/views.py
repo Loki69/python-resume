@@ -7,15 +7,18 @@ from .models import Persona, Skill, Project
 #     return Project.objects.all()
 
 def index(request):
-    return render_to_response('about_me/about_me.html',{'persona':Persona.objects.get(id=1)})
+    return render_to_response('home_page/home.html',{'menu':1})
 
 def projects(request):
-    return render_to_response('me/last_news.html',{'news':last_news()})
+    return render_to_response('projects/projects.html',{'menu':2})
 
 def aboutMe(request):
-    result = None
+    persona = None
+    article = None
     try:
-        result = Persona.objects.get(id=1)
+        persona = Persona.objects.get(id=1)
+        article = Article.objects.filter(owner=persona.id).orde_by('id').get(1)
+
     except Persona.DoesNotExist:
-        result = Persona.objects.create("Pavel Garani")
-    return render_to_response('me/about_me.html',{'persona':result,'menu':1})
+        persona = Persona.objects.create("Pavel Garani")
+    return render_to_response('about_me/about_me.html',{'persona':persona,'menu':3,'about_me':article})
