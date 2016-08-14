@@ -1,10 +1,10 @@
 {% block menu %}
 <div id="menu">
     <ul>
-        <li {% if page_menu = 1 or page_menu = None %}class="current_page_item" {% endif%}><a href="#"title="">Homepage</a></li>
-        <li {% if page_menu = 2 %}class="current_page_item" {% endif%}><a href="#" title="">My project</a></li>
-        <li {% if page_menu = 3 %}class="current_page_item" {% endif%}><a href="#" title="">About me</a></li>
-        <li {% if page_menu = 4 %}class="current_page_item" {% endif%}><a href="#" title="">Contact me</a></li>
+        <li {% if page_menu == 1 or page_menu == None %}class="current_page_item" {% endif%}><a href="/"title="">Homepage</a></li>
+        <li {% if page_menu == 2 %}class="current_page_item" {% endif%}><a href="/projects/" title="">My project</a></li>
+        <li {% if page_menu == 3 %}class="current_page_item" {% endif%}><a href="/about/" title="">About me</a></li>
+        <li {% if page_menu == 4 %}class="current_page_item" {% endif%}><a href="/contact/" title="">Contact me</a></li>
     </ul>
 </div>
 {% endblock %} 

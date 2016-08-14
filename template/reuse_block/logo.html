@@ -1,7 +1,7 @@
 {% load static %}
 {% block logo %}
 <div id="logo">
-    <img src={% if logos = None %}
+    <img src={% if logos == None %}
                 {% static 'images/p01(50%).jpg' %}
             {% else %}
                 "{{ logos }}"
