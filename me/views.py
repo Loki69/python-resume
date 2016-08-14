@@ -3,11 +3,7 @@ from django.http.response import HttpResponse
 from django.template.loader import get_template
 from .models import Persona, Skill, Project,Article
 
-# def last_news(count=1):
-#     return Project.objects.all()
-
 def index(request):
-
     return render_to_response('home_page/home.html',{'page_menu':1, 'projects':get_projects[:3]})
 
 def projects(request):
