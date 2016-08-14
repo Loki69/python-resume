@@ -10,21 +10,13 @@
             <h3>111111111111111</h3>
             <p><a href="#">heeeeeeeeeeeeeeeeeeeeeeeeerrrr</a></p>
         </li>
+        {% for project in projects%}
         <li>
-            <p class="date"><a href="#">Jan<b>05</b></a></p>
-            <h3>111111111111111</h3>
-            <p><a href="#">heeeeeeeeeeeeeeeeeeeeeeeeerrrr</a></p>
+            <p class="date"><a href="#">{{project.publishe|date:"b" }}<b>{{project.publishe|date:"d" }}</b></a></p>
+            <h3>{{project}}</h3>
+            <p><a href="/project/{{project.id}}">{{project.shor_article}}</a></p>
         </li>
-        <li>
-            <p class="date"><a href="#">Jan<b>05</b></a></p>
-            <h3>111111111111111</h3>
-            <p><a href="#">heeeeeeeeeeeeeeeeeeeeeeeeerrrr</a></p>
-        </li>
-        <li>
-            <p class="date"><a href="#">Jan<b>05</b></a></p>
-            <h3>111111111111111</h3>
-            <p><a href="#">heeeeeeeeeeeeeeeeeeeeeeeeerrrr</a></p>
-        </li>
+        {% endfor %}
     </ul>
 </div>
 {% endblock %}

@@ -7,7 +7,9 @@ from .models import Persona, Skill, Project,Article
 #     return Project.objects.all()
 
 def index(request):
-    return render_to_response('home_page/home.html',{'page_menu':1})
+    projects = get_projects()
+    print(projects)
+    return render_to_response('home_page/home.html',{'page_menu':1, 'projects':projects})
 
 def projects(request):
     return render_to_response('projects/projects.html',{'page_menu':2})
@@ -28,3 +30,7 @@ def about_me(request):
         'persona':persona,
         'page_menu':3,
         'about_me':article})
+
+def get_projects():
+    persona = Persona.objects.get(id=1)
+    return Project.objects.order_by('id').filter(owner=persona.id)
