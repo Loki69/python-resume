@@ -7,12 +7,11 @@ from .models import Persona, Skill, Project,Article
 #     return Project.objects.all()
 
 def index(request):
-    projects = get_projects()
-    print(projects)
-    return render_to_response('home_page/home.html',{'page_menu':1, 'projects':projects})
+
+    return render_to_response('home_page/home.html',{'page_menu':1, 'projects':get_projects[:3]})
 
 def projects(request):
-    return render_to_response('projects/projects.html',{'page_menu':2,'projects':project})
+    return render_to_response('projects/projects.html',{'page_menu':2,'projects':get_projects})
 
 def project(request,project_id=1):
     return render_to_response('projects/project.html',{'page_menu':2,
