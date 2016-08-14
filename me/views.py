@@ -12,7 +12,11 @@ def index(request):
     return render_to_response('home_page/home.html',{'page_menu':1, 'projects':projects})
 
 def projects(request):
-    return render_to_response('projects/projects.html',{'page_menu':2})
+    return render_to_response('projects/projects.html',{'page_menu':2,'projects':project})
+
+def project(request,project_id=1):
+    return render_to_response('projects/project.html',{'page_menu':2,
+            'project': get_project(project_id)})
 
 def contact(reques):
     return render_to_response('contact/contact.html',{'page_menu':4})
@@ -34,3 +38,6 @@ def about_me(request):
 def get_projects():
     persona = Persona.objects.get(id=1)
     return Project.objects.order_by('id').filter(owner=persona.id)
+
+def get_project(id):
+    return Project.objects.get(id=id)

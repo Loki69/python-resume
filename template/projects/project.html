@@ -1,13 +1,20 @@
-{% extends "core/index.html" %}
-{% load static %}
-
-{% block content %}     
-    <div id="welcome">
+{% extends "core/index.html" %} {% load static %} {% block content %}
+<div id="welcome">
     <div class="title">
         <h2>{{project.title}}</h2>
     </div>
     <div>
-
+        {{project.article}}
     </div>
     <div>
-{% endblock %}
+        <span class="byline">
+            Skils:{% for skill in project.skills.all%}
+            {{skill.skill}}
+            {% endfor %}
+            </span><br/>
+        <span class="byline">
+            URL:{{project.links}}
+            </span><br/>
+    </div>
+    <div>
+        {% endblock %}
